@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&display=swap');
+@import url("./instruments.css");
+
+/*Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: 'Crimson Pro', serif;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  letter-spacing: 2px;
+}
+
+hr {
+	border: 1px solid rgb(138, 121, 121);
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.title--name {
+	text-align: center;
+	font-size: 3.25em;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	padding: 0;
+}
+
+.title--icon {
+	padding: 0;
+	text-align: center;
+	font-size: 4em;
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
+@keyframes jiggle {
+    0% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    33% {
+        transform: rotate(1deg) scale(1.0);
+        opacity: 0.75;
+    }
+    66% {
+        transform: rotate(-1deg) scale(1.0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}

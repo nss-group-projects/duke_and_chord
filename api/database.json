@@ -1,0 +1,156 @@
+{
+    "musicians":[],
+    "instrumentTypes":[
+        {
+            "id":1,
+            "name": "Wind"
+        },
+        {
+            "id":2,
+            "name": "String"
+        },
+        {
+            "id":3,
+            "name": "Percussion"
+        }
+    ],
+    "instruments":[
+        {
+            "id":1,
+            "fileName": "baritone.jpeg",
+            "name": "Baritone",
+            "instrumentTypeId":1
+        },
+        {
+            "id":2,
+            "fileName": "violin.jpeg",
+            "name": "Violin",
+            "instrumentTypeId":2
+        },
+        {
+            "id":3,
+            "fileName": "triangle.jpeg",
+            "name": "Triangle",
+            "instrumentTypeId":3
+        },
+        {
+            "id":4,
+            "fileName": "clarinet.jpeg",
+            "name": "Clarinet",
+            "instrumentTypeId":1
+        },
+        {
+            "id":5,
+            "fileName": "trombone.jpeg",
+            "name": "Trombone",
+            "instrumentTypeId":1
+        },
+        {
+            "id":6,
+            "fileName": "guitar.jpeg",
+            "name": "Guitar",
+            "instrumentTypeId":2
+        }
+    ],
+    "classes":[],
+    "users":[
+        {
+            "id": 1,
+            "name": "Jessica Younker",
+            "email": "jessica@younker.com"
+          },
+          {
+            "id": 2,
+            "name": "Jordan Nelson",
+            "email": "jordan@nelson.com"
+          },
+          {
+            "id": 3,
+            "name": "Zoe LeBlanc",
+            "email": "zoe@leblanc.com"
+          },
+          {
+            "name": "Meg Ducharme",
+            "email": "meg@ducharme.com",
+            "id": 4
+          },
+          {
+            "name": "Hannah Hall",
+            "email": "hannah@hall.com",
+            "id": 5
+          },
+          {
+            "name": "Emily Lemmon",
+            "email": "emily@lemmon.com",
+            "id": 6
+          },
+          {
+            "name": "Jordan Castelloe",
+            "email": "jordan@castelloe.com",
+            "id": 7
+          },
+          {
+            "name": "Leah Gwin",
+            "email": "leah@gwin.com",
+            "id": 8
+          },
+          {
+            "name": "Caitlin Stein",
+            "email": "caitlin@stein.com",
+            "id": 9
+          },
+          {
+            "name": "Greg Korte",
+            "email": "greg@korte.com",
+            "id": 10
+          },
+          {
+            "name": "Charisse Lambert",
+            "email": "charisse@lambert.com",
+            "id": 11
+          },
+          {
+            "name": "Madi Peper",
+            "email": "madi@peper.com",
+            "id": 12
+          },
+          {
+            "name": "Jenna Solis",
+            "email": "jenna@solis.com",
+            "id": 14
+          },
+          {
+            "id": 15,
+            "name": "Ryan Tanay",
+            "email": "ryan@tanay.com"
+          },
+          {
+            "id": 16,
+            "name": "Emma Beaton",
+            "email": "emma@beaton.com"
+          },
+          {
+            "id": 17,
+            "name": "Dani Adkins",
+            "email": "dani.adkins.com"
+          },
+          {
+            "id": 18,
+            "name": "Adam Oswalt",
+            "email": "adam@oswalt.com"
+          },
+          {
+            "id": 19,
+            "name": "Fletcher Bangs",
+            "email": "flangs@bangs.com"
+          },
+          {
+            "id": 20,
+            "name": "Angela Lee",
+            "email": "lee@lee.com"
+          }
+    ],
+    "signups":[],
+    "shoppingCart":[],
+    "shoppingCartItems":[]
+}
