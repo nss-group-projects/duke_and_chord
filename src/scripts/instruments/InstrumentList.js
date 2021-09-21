@@ -6,12 +6,12 @@ export const InstrumentList = () => {
     return `
         <article class="instruments">
         ${
-            instruments.map(i => {
+            instruments.map((i, idx, arr) => {
                 return `
                     <section class="instrument" id="instrument--${i.id}">
-                        <h3 class="instrument__name">${i.name}</h3>
-                        <h4 class="instrument__type">(${i.instrumentType.name})</h4>
                         <img class="instrument__image" src="/images/${i.fileName}" />
+                        <h3 class="header--centered instrument__name">${i.name}</h3>
+                        <h4 class="header--centered instrument__type">(${i.instrumentType.name})</h4>
 
                         <div class="instrument__seller">
                             Seller is <a href="#">${i.user.name}</a>
