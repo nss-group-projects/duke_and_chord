@@ -19,37 +19,61 @@
             "id":1,
             "fileName": "baritone.jpeg",
             "name": "Baritone",
-            "instrumentTypeId":1
+            "instrumentTypeId":1,
+            "used": false,
+            "price": 86.00,
+            "description": "Error officia a. Tenetur odio aut sit. Qui reiciendis unde maxime aut vitae praesentium.",
+            "userId":8
         },
         {
             "id":2,
             "fileName": "violin.jpeg",
             "name": "Violin",
-            "instrumentTypeId":2
+            "instrumentTypeId":2,
+            "used": false,
+            "price": 86.00,
+            "description": "Perferendis sunt illo blanditiis est ut libero. Nostrum sed aperiam qui aut. Cupiditate dolorem molestias sint occaecati vel autem enim voluptas voluptates. Ullam voluptatum quibusdam fuga corporis vel et.",
+            "userId":3
         },
         {
             "id":3,
             "fileName": "triangle.jpeg",
             "name": "Triangle",
-            "instrumentTypeId":3
+            "instrumentTypeId":3,
+            "used": false,
+            "price": 86.00,
+            "description": "Sed cupiditate perspiciatis ad qui tempora facilis placeat. Officiis consectetur est laborum. Recusandae facilis optio voluptate laboriosam nobis officiis.",
+            "userId":9
         },
         {
             "id":4,
             "fileName": "clarinet.jpeg",
             "name": "Clarinet",
-            "instrumentTypeId":1
+            "instrumentTypeId":1,
+            "used": false,
+            "price": 86.00,
+            "description": "Et eveniet nisi velit. Sit enim inventore similique nemo quia aliquid blanditiis consequatur. Delectus in fugit doloribus aut. Praesentium dignissimos nihil fugit molestias totam perferendis quia voluptate dicta.",
+            "userId":1
         },
         {
             "id":5,
             "fileName": "trombone.jpeg",
             "name": "Trombone",
-            "instrumentTypeId":1
+            "instrumentTypeId":1,
+            "used": false,
+            "price": 86.00,
+            "description": "Dolor rerum quaerat eum ullam. Sit placeat ut fugiat ea suscipit rerum. Et laboriosam non labore sit quis aut laboriosam ullam. Illo esse iste unde sint esse consequatur ipsam ut. Et harum maiores rem suscipit dolores.",
+            "userId":11
         },
         {
             "id":6,
             "fileName": "guitar.jpeg",
             "name": "Guitar",
-            "instrumentTypeId":2
+            "instrumentTypeId":2,
+            "used": false,
+            "price": 86.00,
+            "description": "Doloribus a ipsam. Aliquam ea quae nostrum eos. Doloribus reprehenderit eum quo suscipit quia ducimus cum voluptatem suscipit. Minus vel sunt dolorem et vitae quis quisquam.",
+            "userId":15
         }
     ],
     "classes":[],

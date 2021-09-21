@@ -10,8 +10,12 @@ export const InstrumentList = () => {
                 return `
                     <section class="instrument" id="instrument--${i.id}">
                         <h3 class="instrument__name">${i.name}</h3>
-                        <h4 class="instrument__type">(${i.instrumentType.name} instrument)</h4>
+                        <h4 class="instrument__type">(${i.instrumentType.name})</h4>
                         <img class="instrument__image" src="/images/${i.fileName}" />
+
+                        <div class="instrument__seller">
+                            Seller is <a href="#">${i.user.name}</a>
+                        </div>
                     </section>
                 `
             }).join("")
