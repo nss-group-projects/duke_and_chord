@@ -1,0 +1,27 @@
+.welcome {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 2rem 15% 5rem 15%;
+
+}
+
+.recents {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0 15% 0 15%;
+}
+
+.recents h3 {
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+.recentInstruments {
+    flex: 3;
+    margin-right: 20rem;
+}
+
+.recentClasses {
+    flex: 1
+}

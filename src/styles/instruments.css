@@ -28,6 +28,13 @@
     box-shadow: 5px 15px 20px rgba(230, 230, 230, 0.4)
 }
 
+.instrument--mini:hover {
+    cursor: pointer;
+    animation: jiggle 0.2s;
+    transition: .4s all ease;
+    z-index: 11;
+}
+
 .header--centered {
     text-align: center;
     margin-block-start: 0;
@@ -65,4 +72,8 @@
     color:rgb(40, 40, 40);
     margin-top: auto;
     padding: 1rem 0 1rem 1rem;
+}
+
+.instrument__price--mini {
+    text-align: center;
 }

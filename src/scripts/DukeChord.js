@@ -1,8 +1,21 @@
+import { getView } from "./data/ViewStateManager.js"
+import { Home } from "./instruments/Home.js"
 import { InstrumentList } from "./instruments/InstrumentList.js"
-import { NavBar } from "./nav/NavBar.js"
 
 export const DukeChord = () => {
-    return `
-        ${ InstrumentList() }
-    `
+    const view = getView()
+
+    switch (view) {
+        case "home":
+            return Home()
+            break;
+
+        case "sales":
+            return InstrumentList()
+            break;
+
+        default:
+            break;
+    }
+
 }
