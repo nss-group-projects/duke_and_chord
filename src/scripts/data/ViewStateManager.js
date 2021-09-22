@@ -9,6 +9,6 @@ export const getView = () => {
 }
 
 export const setView = (view) => {
-    state.view = type
+    state.view = view
     container.dispatchEvent( new CustomEvent("stateChanged") )
 }
