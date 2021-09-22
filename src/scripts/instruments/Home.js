@@ -1,4 +1,6 @@
+import { getClasses } from "../data/ClassStateManager.js"
 import { getInstruments } from "../data/InstrumentsStateManager.js"
+import { MiniClass } from "./MiniClass.js"
 import { MiniInstrument } from "./MiniInstrument.js"
 
 const container = document.querySelector("#content")
@@ -6,6 +8,14 @@ const container = document.querySelector("#content")
 export const Home = () => {
     const allInstruments = getInstruments()
     const instruments = allInstruments.slice(allInstruments.length - 6, allInstruments.length - 1)
+    const classes = getClasses().filter(clas => {
+        const startDate = new Date(clas.start)
+        const now = new Date()
+        if (startDate > now) {
+            return true
+        }
+        return false
+    })
 
     return `
         <div class="welcome">
@@ -23,10 +33,16 @@ export const Home = () => {
                         instruments.map(MiniInstrument).join("")
                     }
                 </div>
-            </section>
+                </section>
 
-            <section class="recentClasses">
+                <section class="recentClasses">
                 <h3>Upcoming Classes</h3>
+
+                <div class="classes">
+                    ${
+                        classes.map(MiniClass).join("")
+                    }
+                </div>
             </section>
         </article>
     `

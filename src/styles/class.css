@@ -1,0 +1,12 @@
+.class {
+    margin: 2rem 0;
+    font-size: 1.2rem;
+}
+
+.class__title {
+    font-size: 1.2rem;
+}
+
+.class__date {
+    padding: 2rem 0 0 0;
+}

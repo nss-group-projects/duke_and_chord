@@ -6,7 +6,15 @@ export const Instrument = (instrument) => {
             <h4 class="header--centered instrument__type">(${instrument.instrumentType.name})</h4>
 
             <div class="instrument__seller">
-                Seller is <a href="#">${instrument.user.name}</a>
+                <div class="instrument__price">
+                    ${instrument.price.toLocaleString(
+                        'en-US',
+                        { style: 'currency', currency: 'USD' }
+                    )}
+                </div>
+                <div>
+                    Seller is <a href="#">${instrument.user.name}</a>
+                </div>
             </div>
 
             <audio id="audio--${instrument.id}">

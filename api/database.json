@@ -2,6 +2,7 @@
 	"classes": [
 		{
 			"id": 1,
+			"title": "How to Use Multiple Drum Sets",
 			"capacity": 10,
 			"musicianId": 1,
 			"start": "2022-03-01",
@@ -10,11 +11,20 @@
 		},
 		{
 			"id": 2,
+			"title": "Different String Configurations for Rock and Jazz",
 			"capacity": 10,
 			"musicianId": 2,
 			"start": "2022-02-22",
 			"end": "2022-02-25",
 			"price": 304.99
+		},
+		{
+			"id": 3,
+			"capacity": 5,
+			"musicianId": 4,
+			"start": "2021-02-22",
+			"end": "2021-02-25",
+			"price": 1325.0
 		}
 	],
 	"musicians": [
@@ -71,7 +81,7 @@
 			"instrumentTypeId": 1,
 			"audio": "baritone.mp3",
 			"used": false,
-			"price": 86.00,
+			"price": 593.24,
 			"description": "Error officia a. Tenetur odio aut sit. Qui reiciendis unde maxime aut vitae praesentium.",
 			"userId": 8
 		},
@@ -82,7 +92,7 @@
 			"instrumentTypeId": 2,
 			"audio": "violin.mp3",
 			"used": false,
-			"price": 86.00,
+			"price": 178.15,
 			"description": "Perferendis sunt illo blanditiis est ut libero. Nostrum sed aperiam qui aut. Cupiditate dolorem molestias sint occaecati vel autem enim voluptas voluptates. Ullam voluptatum quibusdam fuga corporis vel et.",
 			"userId": 3
 		},
@@ -93,7 +103,7 @@
 			"instrumentTypeId": 3,
 			"audio": "triangle.wav",
 			"used": false,
-			"price": 86.00,
+			"price": 177.94,
 			"description": "Sed cupiditate perspiciatis ad qui tempora facilis placeat. Officiis consectetur est laborum. Recusandae facilis optio voluptate laboriosam nobis officiis.",
 			"userId": 9
 		},
@@ -104,7 +114,7 @@
 			"instrumentTypeId": 1,
 			"audio": "CLARINET.wav",
 			"used": false,
-			"price": 86.00,
+			"price": 845.26,
 			"description": "Et eveniet nisi velit. Sit enim inventore similique nemo quia aliquid blanditiis consequatur. Delectus in fugit doloribus aut. Praesentium dignissimos nihil fugit molestias totam perferendis quia voluptate dicta.",
 			"userId": 1
 		},
@@ -115,7 +125,7 @@
 			"instrumentTypeId": 1,
 			"audio": "trombone.mp3",
 			"used": false,
-			"price": 86.00,
+			"price": 968.98,
 			"description": "Dolor rerum quaerat eum ullam. Sit placeat ut fugiat ea suscipit rerum. Et laboriosam non labore sit quis aut laboriosam ullam. Illo esse iste unde sint esse consequatur ipsam ut. Et harum maiores rem suscipit dolores.",
 			"userId": 11
 		},
@@ -126,7 +136,7 @@
 			"instrumentTypeId": 2,
 			"audio": "Acoustic_Guitar.wav",
 			"used": false,
-			"price": 86.00,
+			"price": 773.53,
 			"description": "Doloribus a ipsam. Aliquam ea quae nostrum eos. Doloribus reprehenderit eum quo suscipit quia ducimus cum voluptatem suscipit. Minus vel sunt dolorem et vitae quis quisquam.",
 			"userId": 15
 		},
@@ -137,7 +147,7 @@
 			"instrumentTypeId": 3,
 			"audio": "bongo.wav",
 			"used": false,
-			"price": 86.00,
+			"price": 458.42,
 			"description": "Dolor est sint. Eveniet aut voluptates qui quia totam quaerat quia ipsum. Sit necessitatibus non maiores ipsum porro mollitia nostrum.",
 			"userId": 7
 		},
@@ -148,7 +158,7 @@
 			"instrumentTypeId": 2,
 			"audio": "harp.wav",
 			"used": false,
-			"price": 86.00,
+			"price": 464.19,
 			"description": "Nihil sunt laborum accusantium. Expedita ducimus in atque maxime quia id excepturi voluptatum. Ut repudiandae repudiandae facilis.",
 			"userId": 2
 		},

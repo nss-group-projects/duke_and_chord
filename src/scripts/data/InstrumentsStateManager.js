@@ -13,7 +13,6 @@ export const getFilter = () => {
 
 export const setFilter = (type) => {
     state.filter = type
-    console.log(state)
     container.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
@@ -40,7 +39,7 @@ export const shouldPlaySounds = () => {
     return state.playSounds
 }
 
-export const getAllInstruments = () => {
+export const fetchAllInstruments = () => {
     return fetch(`http://localhost:5002/api/instruments?_expand=instrumentType&_expand=user`)
         .then(response => response.json())
         .then(

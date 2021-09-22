@@ -10,5 +10,6 @@ export const getView = () => {
 
 export const setView = (view) => {
     state.view = view
+    sessionStorage.setItem("chord_view", view)
     container.dispatchEvent( new CustomEvent("stateChanged") )
 }
