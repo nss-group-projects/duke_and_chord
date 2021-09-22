@@ -1,25 +1,54 @@
-import { getInstruments } from "../data/InstrumentsStateManager.js"
+import { getInstruments, setInstrument, shouldPlaySounds } from "../data/InstrumentsStateManager.js"
+import { Instrument } from "./Instrument.js"
+
+const container = document.querySelector("#container")
+let audio = null
+
+container.addEventListener(
+    "click",
+    (pointerEvent) => {
+        const instrumentClicked = pointerEvent.path.find(element => element.className === "instrument")
+        if (instrumentClicked) {
+            const [, id] = pointerEvent.target.id.split("--")
+            setInstrument(parseInt(id))
+        }
+    }
+)
+
+container.addEventListener(
+    "mouseover",
+    (pointerEvent) => {
+        if (shouldPlaySounds()) {
+            const instruments = getInstruments()
+            if (pointerEvent.target.id.startsWith("instrument--")) {
+                const [, id] = pointerEvent.target.id.split("--")
+                const instrument = instruments.find(instr => instr.id === parseInt(id))
+                audio = new Audio(`/audio/${instrument.audio}`);
+                audio.play()
+            }
+        }
+    }
+)
+
+container.addEventListener(
+    "mouseout",
+    (pointerEvent) => {
+        if (shouldPlaySounds()) {
+            if (pointerEvent.target.id.startsWith("instrument--")) {
+                audio.pause()
+                audio.currentTime = 0
+            }
+        }
+    }
+)
 
 export const InstrumentList = () => {
     const instruments = getInstruments()
 
     return `
+        <h2 class="header--centered header--sale">Instruments for Sale</h2>
         <article class="instruments">
-        ${
-            instruments.map((i, idx, arr) => {
-                return `
-                    <section class="instrument" id="instrument--${i.id}">
-                        <img class="instrument__image" src="/images/${i.fileName}" />
-                        <h3 class="header--centered instrument__name">${i.name}</h3>
-                        <h4 class="header--centered instrument__type">(${i.instrumentType.name})</h4>
-
-                        <div class="instrument__seller">
-                            Seller is <a href="#">${i.user.name}</a>
-                        </div>
-                    </section>
-                `
-            }).join("")
-        }
+            ${instruments.map(Instrument).join("")}
         </article>
     `
 }
