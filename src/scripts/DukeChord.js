@@ -3,8 +3,6 @@ import { NavBar } from "./nav/NavBar.js"
 
 export const DukeChord = () => {
     return `
-        ${ NavBar() }
-        <hr/>
         ${ InstrumentList() }
     `
 }

@@ -1,18 +1,39 @@
 const state = {
     instruments: [],
     chosenInstrument: {},
-    playSounds: true
+    playSounds: false,
+    filter: ""
 }
 
+const container = document.querySelector("#content")
 
+export const getFilter = () => {
+    return state.filter
+}
+
+export const setFilter = (type) => {
+    state.filter = type
+    console.log(state)
+    container.dispatchEvent( new CustomEvent("stateChanged") )
+}
 
 export const setInstrument = (id) => {
     state.chosenInstrument = state.instruments.find(i => i.id === id) || {}
-    console.log(state)
+    container.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
 export const getInstrument = () => {
     return state.chosenInstrument
+}
+
+export const turnOffSounds = () => {
+    state.playSounds = false
+    container.dispatchEvent( new CustomEvent("stateChanged") )
+}
+
+export const turnOnSounds = () => {
+    state.playSounds = true
+    container.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
 export const shouldPlaySounds = () => {
@@ -25,15 +46,22 @@ export const getAllInstruments = () => {
         .then(
             (instrumentsArray) => {
                 state.instruments = instrumentsArray
-                console.log(state)
             }
         )
 }
 
 export const getInstruments = () => {
-    return state.instruments.map(
+    return state.instruments.filter(
         (instrument) => {
-            return {...instrument}
+            if (state.filter !== "" && instrument.instrumentType.name.toLowerCase() === state.filter) {
+                return true
+            }
+            else if (state.filter === "") {
+                return true
+            }
+
+            return false
         }
     )
+    .map(instrument => ({...instrument}))
 }

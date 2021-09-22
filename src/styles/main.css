@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&display=swap');
 @import url("./instruments.css");
+@import url("./options.css");
 
 /*Typography
 --------------------------------------------------------------*/
@@ -26,6 +27,10 @@ hr {
 	border: 1px solid rgb(138, 121, 121);
 	margin-left: 1rem;
 	margin-right: 1rem;
+}
+
+#header {
+    line-height: 0.9;
 }
 
 .title--name {

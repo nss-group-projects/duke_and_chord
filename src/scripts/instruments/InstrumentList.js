@@ -1,7 +1,8 @@
 import { getInstruments, setInstrument, shouldPlaySounds } from "../data/InstrumentsStateManager.js"
 import { Instrument } from "./Instrument.js"
+import { Options } from "./Options.js"
 
-const container = document.querySelector("#container")
+const container = document.querySelector("#content")
 let audio = null
 
 container.addEventListener(
@@ -44,9 +45,13 @@ container.addEventListener(
 
 export const InstrumentList = () => {
     const instruments = getInstruments()
+    const playSound = shouldPlaySounds()
 
     return `
         <h2 class="header--centered header--sale">Instruments for Sale</h2>
+
+        ${ Options() }
+
         <article class="instruments">
             ${instruments.map(Instrument).join("")}
         </article>
