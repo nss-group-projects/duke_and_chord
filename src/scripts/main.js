@@ -1,8 +1,10 @@
-import { fetchAllClasses } from "./data/ClassStateManager.js";
-import { fetchAllInstruments } from "./data/InstrumentsStateManager.js";
-import { setView } from "./data/ViewStateManager.js";
-import { DukeChord } from "./DukeChord.js";
-import { NavBar } from "./nav/NavBar.js";
+import { LoginForm } from "./auth/Login.js"
+import { fetchAllClasses } from "./data/ClassStateManager.js"
+import { fetchAllInstruments } from "./data/InstrumentsStateManager.js"
+import { fetchUsers, setCurrentUser } from "./data/UserStateManager.js"
+import { setView } from "./data/ViewStateManager.js"
+import { DukeChord } from "./DukeChord.js"
+import { Header } from "./nav/Header.js"
 
 const header = document.querySelector("#header")
 const container = document.querySelector("#content")
@@ -12,17 +14,41 @@ const syncStorage = () => {
     view ? setView(view) : setView("home")
 }
 
-const renderAllStateAsHTML = () => {
+const determineAuth = () => {
+    const user = localStorage.getItem("chord_user")
 
-    fetchAllInstruments()
-    .then(fetchAllClasses)
-    .then(() => {
-        container.innerHTML = DukeChord()
-    })
+    if (user) {
+        const unencodedUser = atob(user)
+        const parsedUser = JSON.parse(unencodedUser)
+        setCurrentUser(parsedUser)
+        return true
+    }
+
+    return false
 }
 
-header.innerHTML = NavBar()
+const renderAllStateAsHTML = () => {
+    if (determineAuth()) {
+        fetchAllInstruments()
+            .then(fetchAllClasses)
+            .then(() => container.innerHTML = DukeChord())
+    }
+    else {
+        fetchUsers().then(
+            () => {
+                container.innerHTML = LoginForm()
+            }
+        )
+    }
+}
+
+header.innerHTML = Header()
 syncStorage()
 renderAllStateAsHTML()
 
-container.addEventListener("stateChanged", renderAllStateAsHTML)
+container.addEventListener("stateChanged", () => {
+    console.log("State changed")
+    renderAllStateAsHTML()
+})
+
+
