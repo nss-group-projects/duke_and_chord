@@ -1,6 +1,6 @@
 import { LoginForm } from "./auth/Login.js"
 import { fetchAllClasses } from "./data/ClassStateManager.js"
-import { fetchAllInstruments } from "./data/InstrumentsStateManager.js"
+import { fetchAllInstruments, setInstrument } from "./data/InstrumentsStateManager.js"
 import { fetchUsers, setCurrentUser } from "./data/UserStateManager.js"
 import { setView } from "./data/ViewStateManager.js"
 import { DukeChord } from "./DukeChord.js"
@@ -12,6 +12,11 @@ const container = document.querySelector("#content")
 const syncStorage = () => {
     const view = sessionStorage.getItem("chord_view")
     view ? setView(view) : setView("home")
+
+    const instrument = sessionStorage.getItem("chord_instrument")
+    instrument
+        ? setInstrument(parseInt(instrument))
+        : setInstrument(0)
 }
 
 const determineAuth = () => {

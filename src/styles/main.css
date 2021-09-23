@@ -37,6 +37,7 @@ hr {
 }
 
 .title--name {
+    cursor: pointer;
 	text-align: center;
 	font-size: 3.75em;
 	margin-block-start: 0;

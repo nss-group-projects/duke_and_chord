@@ -1,3 +1,15 @@
+import { setView } from "../data/ViewStateManager.js"
+
+document.querySelector("#header").addEventListener(
+    "click",
+    event => {
+        setView("home")
+        document.querySelector("#content").dispatchEvent(
+            new CustomEvent("stateChanged")
+        )
+    }
+)
+
 export const Header = () => {
     return `
         <header>

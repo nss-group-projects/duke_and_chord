@@ -1,5 +1,6 @@
 import { getView } from "./data/ViewStateManager.js"
-import { Home } from "./instruments/Home.js"
+import { Home } from "./Home.js"
+import { InstrumentDetail } from "./instruments/InstrumentDetail.js"
 import { InstrumentList } from "./instruments/InstrumentList.js"
 import { NavBar } from "./nav/NavBar.js"
 
@@ -18,6 +19,13 @@ export const DukeChord = () => {
             return `
                 ${NavBar()}
                 ${InstrumentList()}
+            `
+            break;
+
+        case "instrument":
+            return `
+                ${NavBar()}
+                ${InstrumentDetail()}
             `
             break;
 

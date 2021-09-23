@@ -1,9 +1,7 @@
-import { getClasses } from "../data/ClassStateManager.js"
-import { getInstruments } from "../data/InstrumentsStateManager.js"
-import { MiniClass } from "./MiniClass.js"
-import { MiniInstrument } from "./MiniInstrument.js"
-
-const container = document.querySelector("#content")
+import { getInstruments } from "./data/InstrumentsStateManager.js";
+import { getClasses } from "./data/ClassStateManager.js";
+import { MiniInstrument } from "./instruments/MiniInstrument.js"
+import { MiniClass } from "./classes/MiniClass.js"
 
 export const Home = () => {
     const allInstruments = getInstruments()

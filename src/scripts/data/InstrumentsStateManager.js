@@ -1,6 +1,6 @@
 const state = {
     instruments: [],
-    chosenInstrument: {},
+    chosenInstrument: 0,
     playSounds: false,
     filter: ""
 }
@@ -17,12 +17,14 @@ export const setFilter = (type) => {
 }
 
 export const setInstrument = (id) => {
-    state.chosenInstrument = state.instruments.find(i => i.id === id) || {}
+    state.chosenInstrument = id
+    sessionStorage.setItem("chord_instrument", id)
     container.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
 export const getInstrument = () => {
-    return state.chosenInstrument
+    const instrument = state.instruments.find(i => i.id === state.chosenInstrument) || {}
+    return instrument
 }
 
 export const turnOffSounds = () => {

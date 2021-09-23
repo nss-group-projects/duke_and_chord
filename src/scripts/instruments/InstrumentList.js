@@ -1,4 +1,5 @@
 import { getInstruments, setInstrument, shouldPlaySounds } from "../data/InstrumentsStateManager.js"
+import { setView } from "../data/ViewStateManager.js"
 import { Instrument } from "./Instrument.js"
 import { Options } from "./Options.js"
 
@@ -12,6 +13,7 @@ container.addEventListener(
         if (instrumentClicked) {
             const [, id] = pointerEvent.target.id.split("--")
             setInstrument(parseInt(id))
+            setView("instrument")
         }
     }
 )
