@@ -28,12 +28,7 @@ container.addEventListener("click", clickEvent => {
 export const LoginForm = () => {
     return `
         <div class="loginForm">
-            <form>
-                <fieldset>
-                    <label for="email">Email:</label>
-                    <input value="meg@ducharme.com" type="text" name="email" autofocus placeholder="Email address" />
-                </fieldset>
-            </form>
+            <input value="meg@ducharme.com" type="text" name="email" autofocus placeholder="Email address" />
             <button id="loginButton">Login</button>
         </div>
     `

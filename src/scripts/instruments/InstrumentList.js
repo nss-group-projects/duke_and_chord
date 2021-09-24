@@ -9,7 +9,7 @@ let audio = null
 container.addEventListener(
     "click",
     (pointerEvent) => {
-        const instrumentClicked = pointerEvent.path.find(element => element.className === "instrument")
+        const instrumentClicked = pointerEvent.path.find(element => element.classList?.contains("instrument"))
         if (instrumentClicked) {
             const [, id] = pointerEvent.target.id.split("--")
             setInstrument(parseInt(id))
