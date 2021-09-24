@@ -4,14 +4,14 @@ export const InstrumentDetail = () => {
     const instrument = getInstrument()
 
     return `
-        <section class="instrument" id="instrument--${instrument.id}">
+        <section class="instrument instrument--details" id="instrument--${instrument.id}">
             <div class="instrument__price--detail">
                 ${instrument.price.toLocaleString(
                     'en-US',
                     { style: 'currency', currency: 'USD' }
                 )}
             </div>
-            <img class="instrument__image" src="/images/${instrument.fileName}" />
+            <img class="instrument__image instrument__image--detail" src="/images/${instrument.fileName}" />
             <h3 class="header--centered instrument__name">${instrument.name}</h3>
             <h4 class="header--centered instrument__type">(${instrument.instrumentType.name})</h4>
 
