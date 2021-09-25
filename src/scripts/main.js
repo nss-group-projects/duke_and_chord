@@ -1,6 +1,6 @@
 import { LoginForm } from "./auth/Login.js"
 import { fetchAllClasses } from "./data/ClassStateManager.js"
-import { fetchAllInstruments, setInstrument } from "./data/InstrumentsStateManager.js"
+import { fetchAllInstruments, fetchAllInstrumentTypes, setInstrument } from "./data/InstrumentsStateManager.js"
 import { fetchUsers, setCurrentUser } from "./data/UserStateManager.js"
 import { setView } from "./data/ViewStateManager.js"
 import { DukeChord } from "./DukeChord.js"
@@ -35,6 +35,7 @@ const determineAuth = () => {
 const renderAllStateAsHTML = () => {
     if (determineAuth()) {
         fetchAllInstruments()
+            .then(fetchAllInstrumentTypes)
             .then(fetchAllClasses)
             .then(() => container.innerHTML = DukeChord())
     }

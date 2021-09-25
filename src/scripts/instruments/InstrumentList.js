@@ -47,7 +47,6 @@ container.addEventListener(
 
 export const InstrumentList = () => {
     const instruments = getInstruments()
-    const playSound = shouldPlaySounds()
 
     return `
         <h2 class="header--centered header--sale">Instruments for Sale</h2>

@@ -1,4 +1,4 @@
-import { logout } from "../data/UserStateManager.js"
+import { getCurrentUser, logout } from "../data/UserStateManager.js"
 import { setView } from "../data/ViewStateManager.js"
 
 const container = document.querySelector("#content")
@@ -15,13 +15,16 @@ container.addEventListener(
 )
 
 export const NavBar = () => {
+    const user = getCurrentUser()
+
     return `
         <nav>
             <ul class="navLinks">
                 <li id="home" class="navLink">Home</li>
                 <li id="sales" class="navLink">Instruments</li>
                 <li id="classes" class="navLink">Classes</li>
-                <li id="logout" class="navLink">Logout</li>
+                <li id="about" class="navLink">About Us</li>
+                <li id="logout" class="navLink">Logout ${user?.name.split(" ")[0]}</li>
             </ul>
         </nav>
     `

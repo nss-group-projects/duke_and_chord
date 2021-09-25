@@ -10,6 +10,14 @@
     cursor: pointer;
 }
 
+.filter {
+    text-align: center;
+}
+
+.filter__description {
+    text-align: center;
+}
+
 .dropdown {
     position: relative;
     display: inline-block;

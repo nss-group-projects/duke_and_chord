@@ -87,3 +87,30 @@
 .instrument__price {
     font-size: larger;
 }
+
+.newInstrument {
+    margin: 0 25%;
+    font-size: 1.25rem;
+}
+
+
+.newInstrument__field {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+}
+
+.newInstrument__field label {
+    flex: 1;
+}
+
+.newInstrument__input {
+    flex: 3;
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.newInstrument__description {
+    width: 100%;
+    height: 5em;
+}

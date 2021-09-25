@@ -27,9 +27,7 @@ export const Home = () => {
                 <h3>Hot Deals</h3>
 
                 <div class="instruments">
-                    ${
-                        instruments.map(MiniInstrument).join("")
-                    }
+                    ${ instruments.map(MiniInstrument).join("") }
                 </div>
                 </section>
 
@@ -37,9 +35,7 @@ export const Home = () => {
                 <h3>Upcoming Classes</h3>
 
                 <div class="classes">
-                    ${
-                        classes.map(MiniClass).join("")
-                    }
+                    ${ classes.map(MiniClass).join("") }
                 </div>
             </section>
         </article>

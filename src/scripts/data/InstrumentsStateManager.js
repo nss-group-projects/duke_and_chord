@@ -1,5 +1,6 @@
 const state = {
     instruments: [],
+    instrumentTypes: [],
     chosenInstrument: 0,
     playSounds: false,
     filter: ""
@@ -49,6 +50,16 @@ export const fetchAllInstruments = () => {
                 state.instruments = instrumentsArray
             }
         )
+}
+
+export const fetchAllInstrumentTypes = () => {
+    return fetch(`http://localhost:5002/api/instrumentTypes`)
+        .then(response => response.json())
+        .then( typeArray  => state.instrumentTypes = typeArray )
+}
+
+export const getInstrumentTypes = () => {
+    return state.instrumentTypes.map(instrument => ({...instrument}))
 }
 
 export const getInstruments = () => {

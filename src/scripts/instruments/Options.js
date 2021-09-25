@@ -37,10 +37,33 @@ export const Options = () => {
 
     return `
         <nav class="options" id="options">
-        <img class="option option__sound" src="/images/sound-${playSound ? "on" : "off"}.jpg" height="40rem" width="40rem" />
-        <img class="option option__filter--wind" src="/images/filter--wind.jpeg" />
-        <img class="option option__filter--string" src="/images/filter--string.jpeg" />
-        <img class="option option__filter--percussion" src="/images/filter--percussion.jpeg" />
+            <span>
+                <div>
+                <img class="option option__sound" src="/images/sound-${playSound ? "on" : "off"}.jpg" height="40rem" width="40rem" />
+                </div>
+                <div>Sound</div>
+            </span>
+
+            <span>
+                <div>
+                    <img class="option option__filter--wind" src="/images/filter--wind.jpeg" />
+                </div>
+                <div>Wind</div>
+            </span>
+
+            <span>
+                <div>
+                    <img class="option option__filter--string" src="/images/filter--string.jpeg" />
+                </div>
+                <div>String</div>
+            </span>
+
+            <span>
+                <div class="filter">
+                    <img class="option option__filter--percussion" src="/images/filter--percussion.jpeg" />
+                </div>
+                <div class="filter__description">Percussion</div>
+            </span>
         </nav>
     `
 }
