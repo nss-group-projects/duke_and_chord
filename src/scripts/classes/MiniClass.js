@@ -3,7 +3,7 @@ export const MiniClass = (clas) => {
         <section class="class class--mini" id="class--${clas.id}">
 
             <div class="class__title--mini">
-                <a href="#">${clas.title}</a>
+                <a href="" id="class__detail--${clas.id}">${clas.title}</a>
             </div>
             <div class="class__musician">With ${clas.musician.name}</div>
             <div class="class__price class__price--mini">${clas.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</div>

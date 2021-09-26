@@ -3,6 +3,7 @@ import { getClasses } from "./data/ClassStateManager.js";
 import { MiniInstrument } from "./instruments/MiniInstrument.js"
 import { MiniClass } from "./classes/MiniClass.js"
 
+
 export const Home = () => {
     const allInstruments = getInstruments()
     const instruments = allInstruments.slice(allInstruments.length - 6, allInstruments.length - 1)

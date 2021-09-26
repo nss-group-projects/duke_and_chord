@@ -1,8 +1,8 @@
-import { RegisterForm } from "./auth/Register.js"
-import { ClassList } from "./classes/ClassList.js"
-import { getInstrument } from "./data/InstrumentsStateManager.js"
-import { getURLParameter } from "./data/ViewStateManager.js"
 import { Home } from "./Home.js"
+import { RegisterForm } from "./auth/Register.js"
+import { ClassDetails } from "./classes/ClassDetails.js"
+import { ClassList } from "./classes/ClassList.js"
+import { getURLParameter } from "./data/ViewStateManager.js"
 import { InstrumentDetail } from "./instruments/InstrumentDetail.js"
 import { InstrumentForm } from "./instruments/InstrumentForm.js"
 import { InstrumentList } from "./instruments/InstrumentList.js"
@@ -33,6 +33,9 @@ const buildView = () => {
 
         case "classes":
             return ClassList()
+
+        case "class":
+            return ClassDetails()
 
         case "register":
             return RegisterForm()
