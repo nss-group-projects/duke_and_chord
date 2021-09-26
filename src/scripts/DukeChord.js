@@ -16,14 +16,14 @@ export const DukeChord = () => {
             `
             break;
 
-        case "about":
+        case "sell":
             return `
                 ${NavBar()}
                 ${InstrumentForm()}
             `
             break;
 
-        case "sales":
+        case "store":
             return `
                 ${NavBar()}
                 ${InstrumentList()}
