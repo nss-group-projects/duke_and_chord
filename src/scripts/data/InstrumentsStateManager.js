@@ -90,5 +90,6 @@ export const getInstruments = () => {
             return false
         }
     )
+    .sort((current, next) => next.id - current.id)
     .map(instrument => ({...instrument}))
 }

@@ -34,7 +34,7 @@ export const Home = () => {
                 <section class="recentClasses">
                 <h3>Upcoming Classes</h3>
 
-                <div class="classes">
+                <div class="classes--mini">
                     ${ classes.map(MiniClass).join("") }
                 </div>
             </section>

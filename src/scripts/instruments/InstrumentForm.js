@@ -63,10 +63,13 @@ export const InstrumentForm = () => {
     }
 
     return `
+        <h2 class="header--centered">Sell Your Instrument</h2>
         <div class="newInstrument">
             <div class="newInstrument__field">
                 <label class="prompt">Name:</label>
-                <input value="${formState.name}" id="name" class="newInstrument__input" type="text"  />
+                <input value="${formState.name}" id="name"
+                    class="newInstrument__input" type="text"
+                    placeholder="e.g. Trumpet"  />
             </div>
 
             <div class="newInstrument__field">

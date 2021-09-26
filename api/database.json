@@ -7,7 +7,8 @@
       "musicianId": 1,
       "start": "2022-03-01",
       "end": "2022-03-13",
-      "price": 449.25
+      "price": 449.25,
+      "description": "Voluptatibus ex at repudiandae delectus nostrum veritatis omnis doloremque ipsa. Quis nihil sequi vitae exercitationem. Eos facere facilis neque iste ut rerum. Quasi cum voluptatem rerum reprehenderit consequatur ad. Nostrum reprehenderit rem alias placeat repudiandae tempora assumenda non. Atque consequatur iusto. Suscipit aperiam minus sequi consectetur. Et qui deserunt non et qui alias. Eos assumenda aut voluptas. Quis voluptatem sunt et sed laboriosam adipisci saepe consequatur. Deleniti dolor cum quisquam et assumenda qui iste temporibus. Maiores iure veniam nemo eum sed non libero delectus qui. Eum et qui quisquam commodi exercitationem voluptas aperiam."
     },
     {
       "id": 2,
@@ -16,15 +17,18 @@
       "musicianId": 2,
       "start": "2022-02-22",
       "end": "2022-02-25",
-      "price": 304.99
+      "price": 304.99,
+      "description": "Et in non pariatur dolorem mollitia eos delectus et libero. Consequuntur id culpa pariatur voluptatem incidunt repellat et officiis aut. Dolor eos eligendi impedit doloremque quas eius deleniti. Incidunt quae placeat unde in. Praesentium aut reiciendis nam sint eum repellat. Cupiditate et doloremque dicta amet voluptatum est sint sequi asperiores. Eum eaque ipsa rerum numquam quae autem. Sed maiores expedita. Excepturi libero minus. Quo occaecati nostrum voluptatem quo voluptatibus veniam alias qui inventore."
     },
     {
       "id": 3,
+      "title": "Master your breathing for playing the tenor saxophone",
       "capacity": 5,
       "musicianId": 4,
       "start": "2021-02-22",
       "end": "2021-02-25",
-      "price": 1325
+      "price": 1325,
+      "description": "Animi saepe facilis cumque sed dolorum est recusandae eligendi enim. Fugiat rerum consequatur et est libero corrupti sapiente. Illo facilis dolor quibusdam laboriosam. Aliquid qui repellat et est itaque. Tenetur odio consequatur nam aut et sapiente qui quia. Consequatur ut et laboriosam esse commodi accusamus nesciunt earum vel. Laudantium voluptatem atque tempora harum aut blanditiis libero enim dolorem. Distinctio cupiditate id omnis fuga aut fugiat aut excepturi sapiente. Fuga minima velit. Praesentium quasi ut fugit ipsa. Sunt occaecati cum laboriosam doloribus. Non vel exercitationem ut impedit iste."
     }
   ],
   "musicians": [
@@ -183,6 +187,17 @@
       "price": 132,
       "description": "Ducimus natus facere eos quis voluptatem nam est. Placeat in et doloremque dolore. Ipsum beatae id atque rem rem.",
       "userId": 20
+    },
+    {
+      "fileName": "oboe.jpeg",
+      "name": "Oboe",
+      "instrumentTypeId": 1,
+      "audio": "oops.wav",
+      "used": false,
+      "price": 85,
+      "description": "Magnam ipsam atque et perspiciatis earum sapiente dolorem.",
+      "userId": 4,
+      "id": 11
     }
   ],
   "users": [

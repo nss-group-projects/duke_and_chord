@@ -1,3 +1,4 @@
+import { ClassList } from "./classes/ClassList.js"
 import { getView } from "./data/ViewStateManager.js"
 import { Home } from "./Home.js"
 import { InstrumentDetail } from "./instruments/InstrumentDetail.js"
@@ -6,43 +7,32 @@ import { InstrumentList } from "./instruments/InstrumentList.js"
 import { NavBar } from "./nav/NavBar.js"
 
 export const DukeChord = () => {
+    return `
+        ${NavBar()}
+        ${buildView()}
+    `
+}
+
+const buildView = () => {
     const view = getView()
 
     switch (view) {
         case "home":
-            return `
-                ${NavBar()}
-                ${Home()}
-            `
-            break;
+            return Home()
 
         case "sell":
-            return `
-                ${NavBar()}
-                ${InstrumentForm()}
-            `
-            break;
+            return InstrumentForm()
 
         case "store":
-            return `
-                ${NavBar()}
-                ${InstrumentList()}
-            `
-            break;
+            return InstrumentList()
 
         case "instrument":
-            return `
-                ${NavBar()}
-                ${InstrumentDetail()}
-            `
-            break;
+            return InstrumentDetail()
+
+        case "classes":
+            return ClassList()
 
         default:
-            return `
-                ${NavBar()}
-                ${Home()}
-            `
-            break;
+            return Home()
     }
-
 }

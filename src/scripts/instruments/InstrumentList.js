@@ -26,8 +26,11 @@ container.addEventListener(
             if (pointerEvent.target.id.startsWith("instrument--")) {
                 const [, id] = pointerEvent.target.id.split("--")
                 const instrument = instruments.find(instr => instr.id === parseInt(id))
-                audio = new Audio(`/audio/${instrument.audio}`);
-                audio.play()
+
+                if (instrument.audio !== "") {
+                    audio = new Audio(`/audio/${instrument.audio}`);
+                    audio.play()
+                }
             }
         }
     }
