@@ -2,7 +2,8 @@ import { LoginForm } from "./auth/Login.js"
 import { RegisterForm } from "./auth/Register.js"
 import { fetchAllClasses } from "./data/ClassStateManager.js"
 import { fetchAllInstruments, fetchAllInstrumentTypes, setInstrument } from "./data/InstrumentsStateManager.js"
-import { fetchUsers, getCurrentUser, isAuthenticated, setCurrentUser } from "./data/UserStateManager.js"
+import { fetchUsers, isAuthenticated } from "./data/UserStateManager.js"
+import { getURLParameter } from "./data/ViewStateManager.js"
 import { DukeChord } from "./DukeChord.js"
 import { Header } from "./nav/Header.js"
 
@@ -33,6 +34,8 @@ const renderAllStateAsHTML = () => {
     }
 }
 
+renderAllStateAsHTML()
+
 /*
     Listen for when any state is changed and render the application HTML
 */
@@ -40,15 +43,7 @@ container.addEventListener("stateChanged", () => {
     renderAllStateAsHTML()
 })
 
-renderAllStateAsHTML()
 
 window.addEventListener('popstate', function (event) {
-	switch (event.state.view) {
-        case "register":
-            container.innerHTML = RegisterForm()
-            break;
-
-        default:
-            break;
-    }
+	container.dispatchEvent(new CustomEvent("stateChanged"))
 });
