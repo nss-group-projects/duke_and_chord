@@ -1,7 +1,9 @@
 import { getInstrument } from "../data/InstrumentsStateManager.js"
+import { getURLParameter } from "../data/ViewStateManager.js"
 
 export const InstrumentDetail = () => {
-    const instrument = getInstrument()
+    const instrumentId = getURLParameter("instrumentId")
+    const instrument = getInstrument(parseInt(instrumentId))
 
     return `
         <section class="instrument instrument--details" id="instrument--${instrument.id}">

@@ -1,6 +1,7 @@
 import { RegisterForm } from "./auth/Register.js"
 import { ClassList } from "./classes/ClassList.js"
-import { getView } from "./data/ViewStateManager.js"
+import { getInstrument } from "./data/InstrumentsStateManager.js"
+import { getURLParameter } from "./data/ViewStateManager.js"
 import { Home } from "./Home.js"
 import { InstrumentDetail } from "./instruments/InstrumentDetail.js"
 import { InstrumentForm } from "./instruments/InstrumentForm.js"
@@ -39,9 +40,4 @@ const buildView = () => {
         default:
             return Home()
     }
-}
-
-
-const getURLParameter = (name="home") => {
-    return decodeURIComponent((new RegExp(`[?|&]${name}=([^&;]+?)(&|#|;|$)`).exec(location.search) || [null, ""])[1].replace(/\+/g, "%20")) || null;
 }

@@ -12,8 +12,7 @@ container.addEventListener(
         const instrumentClicked = pointerEvent.path.find(element => element.classList?.contains("instrument"))
         if (instrumentClicked) {
             const [, id] = pointerEvent.target.id.split("--")
-            setInstrument(parseInt(id))
-            changeView("instrument")
+            changeView(`instrument&instrumentId=${id}`)
         }
     }
 )

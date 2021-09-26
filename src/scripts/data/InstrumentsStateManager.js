@@ -23,8 +23,8 @@ export const setInstrument = (id) => {
     container.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
-export const getInstrument = () => {
-    const instrument = state.instruments.find(i => i.id === state.chosenInstrument) || {}
+export const getInstrument = (id) => {
+    const instrument = state.instruments.find(i => i.id === id) || {}
     return instrument
 }
 
