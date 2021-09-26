@@ -100,8 +100,12 @@
     align-items: baseline;
 }
 
-.newInstrument__field label {
+.prompt {
     flex: 1;
+}
+
+#newInstrument__submit, #newInstrument__cancel {
+    font-size: 1.25rem;
 }
 
 .newInstrument__input {

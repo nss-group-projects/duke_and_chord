@@ -42,6 +42,21 @@ export const shouldPlaySounds = () => {
     return state.playSounds
 }
 
+export const saveInstrument = (instrument) => {
+    return fetch(`http://localhost:5002/api/instruments`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(instrument)
+    })
+        .then(response => response.json())
+        .then(fetchAllInstruments)
+        .then(() => {
+            container.dispatchEvent( new CustomEvent("stateChanged") )
+        })
+}
+
 export const fetchAllInstruments = () => {
     return fetch(`http://localhost:5002/api/instruments?_expand=instrumentType&_expand=user`)
         .then(response => response.json())
