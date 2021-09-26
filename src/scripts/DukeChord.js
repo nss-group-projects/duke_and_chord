@@ -1,3 +1,4 @@
+import { RegisterForm } from "./auth/Register.js"
 import { ClassList } from "./classes/ClassList.js"
 import { getView } from "./data/ViewStateManager.js"
 import { Home } from "./Home.js"
@@ -14,7 +15,7 @@ export const DukeChord = () => {
 }
 
 const buildView = () => {
-    const view = getView()
+    const view = getURLParameter()
 
     switch (view) {
         case "home":
@@ -32,7 +33,15 @@ const buildView = () => {
         case "classes":
             return ClassList()
 
+        case "register":
+            return RegisterForm()
+
         default:
             return Home()
     }
+}
+
+
+const getURLParameter = (name) => {
+    return decodeURIComponent((new RegExp("[#?|&]view=" + "([^&;]+?)(&|#|;|$)").exec(location.hash) || [null, ""])[1].replace(/\+/g, "%20")) || null;
 }

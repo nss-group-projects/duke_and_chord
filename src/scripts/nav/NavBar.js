@@ -7,9 +7,14 @@ container.addEventListener(
     "click",
     (event) => {
         if (event.target.className === "navLink") {
-            event.target.id === "logout"
-                ? logout()
-                : setView(event.target.id)
+            if (event.target.id === "logout") {
+                logout()
+            }
+            else {
+                history.pushState(null, "view", `?view=${event.target.id}`)
+                var popStateEvent = new PopStateEvent('popstate', {state: {view: event.target.id} })
+                window.dispatchEvent(popStateEvent)
+            }
         }
     }
 )

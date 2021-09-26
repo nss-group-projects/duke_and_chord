@@ -25,11 +25,28 @@ container.addEventListener("click", clickEvent => {
     }
 })
 
+container.addEventListener(
+    "click",
+    (event) => {
+        if (event.target.id === "registerLink") {
+            event.preventDefault()
+            history.pushState(null, "view", `?view=register`)
+            var popStateEvent = new PopStateEvent('popstate', { state: { view: "register" } })
+            window.dispatchEvent(popStateEvent)
+        }
+    }
+)
+
+
 export const LoginForm = () => {
     return `
         <div class="loginForm">
             <input value="meg@ducharme.com" type="text" name="email" autofocus placeholder="Email address" />
             <button id="loginButton">Login</button>
         </div>
+
+        <section class="register">
+            <a id="registerLink" href="/">Not a member yet?</a>
+        </section>
     `
 }

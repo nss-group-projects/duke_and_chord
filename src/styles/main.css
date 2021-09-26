@@ -64,6 +64,11 @@ hr {
     align-items: center;
 }
 
+.register {
+    padding-top: 3rem;
+    text-align: center;
+}
+
 #loginButton {
     font-size: 1.25rem;
     width: 10rem;

@@ -9,6 +9,7 @@ const state = {
 
 export const logout = () => {
     localStorage.removeItem("chord_user")
+    state.currentUser = {}
     container.dispatchEvent(new CustomEvent("stateChanged"))
 }
 

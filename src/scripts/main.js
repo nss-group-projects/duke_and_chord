@@ -1,4 +1,5 @@
 import { LoginForm } from "./auth/Login.js"
+import { RegisterForm } from "./auth/Register.js"
 import { fetchAllClasses } from "./data/ClassStateManager.js"
 import { fetchAllInstruments, fetchAllInstrumentTypes, setInstrument } from "./data/InstrumentsStateManager.js"
 import { fetchUsers, getCurrentUser, setCurrentUser } from "./data/UserStateManager.js"
@@ -81,3 +82,14 @@ container.addEventListener("stateChanged", () => {
 })
 
 initializeApplication()
+
+window.addEventListener('popstate', function (event) {
+	switch (event.state.view) {
+        case "register":
+            container.innerHTML = RegisterForm()
+            break;
+
+        default:
+            break;
+    }
+});
