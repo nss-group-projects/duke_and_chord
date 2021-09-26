@@ -30,3 +30,24 @@ export const fetchUsers = () => {
 export const getUsers = () => {
     return state.users.map(u => ({...u}))
 }
+
+export const isAuthenticated = () => {
+    // Check if user is already in state
+    if ("id" in state.currentUser) {
+        return true
+    }
+    // Check if encoded user object in local storage
+    else {
+        const user = localStorage.getItem("chord_user")
+
+        if (user) {
+            const unencodedUser = atob(user)
+            const parsedUser = JSON.parse(unencodedUser)
+            setCurrentUser(parsedUser)
+            return true
+        }
+    }
+
+    // No user in state or in local storage
+    return false
+}

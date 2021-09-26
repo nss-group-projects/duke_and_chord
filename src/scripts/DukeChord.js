@@ -15,7 +15,7 @@ export const DukeChord = () => {
 }
 
 const buildView = () => {
-    const view = getURLParameter()
+    const view = getURLParameter("view")
 
     switch (view) {
         case "home":
@@ -42,6 +42,6 @@ const buildView = () => {
 }
 
 
-const getURLParameter = (name) => {
-    return decodeURIComponent((new RegExp("[#?|&]view=" + "([^&;]+?)(&|#|;|$)").exec(location.hash) || [null, ""])[1].replace(/\+/g, "%20")) || null;
+const getURLParameter = (name="home") => {
+    return decodeURIComponent((new RegExp(`[?|&]${name}=([^&;]+?)(&|#|;|$)`).exec(location.search) || [null, ""])[1].replace(/\+/g, "%20")) || null;
 }

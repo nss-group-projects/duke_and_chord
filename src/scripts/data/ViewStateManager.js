@@ -8,8 +8,10 @@ export const getView = () => {
     return state.view
 }
 
-export const setView = (view) => {
+export const changeView = (view) => {
     state.view = view
-    sessionStorage.setItem("chord_view", view)
+    history.pushState(null, "view", `?view=${view}`)
+    var popStateEvent = new PopStateEvent('popstate', {state: {view} })
+    window.dispatchEvent(popStateEvent)
     container.dispatchEvent( new CustomEvent("stateChanged") )
 }

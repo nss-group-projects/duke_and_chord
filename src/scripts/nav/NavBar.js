@@ -1,5 +1,5 @@
 import { getCurrentUser, logout } from "../data/UserStateManager.js"
-import { setView } from "../data/ViewStateManager.js"
+import { changeView } from "../data/ViewStateManager.js"
 
 const container = document.querySelector("#content")
 
@@ -11,9 +11,7 @@ container.addEventListener(
                 logout()
             }
             else {
-                history.pushState(null, "view", `?view=${event.target.id}`)
-                var popStateEvent = new PopStateEvent('popstate', {state: {view: event.target.id} })
-                window.dispatchEvent(popStateEvent)
+                changeView(event.target.id)
             }
         }
     }

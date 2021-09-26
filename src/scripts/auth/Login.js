@@ -1,5 +1,5 @@
-import { getUsers, setCurrentUser } from "../data/UserStateManager.js"
-import { setView } from "../data/ViewStateManager.js"
+import { getUsers } from "../data/UserStateManager.js"
+import { changeView } from "../data/ViewStateManager.js"
 
 const container = document.querySelector("#content")
 
@@ -19,7 +19,7 @@ container.addEventListener("click", clickEvent => {
         if (foundUser !== null) {
             const encodedUser = btoa(JSON.stringify(foundUser))
             localStorage.setItem("chord_user", encodedUser)
-            setView("home")
+            changeView("home")
             container.dispatchEvent(new CustomEvent("stateChanged"))
         }
     }
