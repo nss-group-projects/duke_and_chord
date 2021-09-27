@@ -1,8 +1,8 @@
 import { LoginForm } from "./auth/Login.js"
 import { RegisterForm } from "./auth/Register.js"
 import { fetchAllClasses } from "./data/ClassStateManager.js"
-import { fetchAllInstruments, fetchAllInstrumentTypes, setInstrument } from "./data/InstrumentsStateManager.js"
-import { fetchUsers, isAuthenticated } from "./data/UserStateManager.js"
+import { fetchAllInstruments, fetchAllInstrumentTypes } from "./data/InstrumentsStateManager.js"
+import { fetchUs, fetchUsers, isAuthenticated } from "./data/UserStateManager.js"
 import { getURLParameter } from "./data/ViewStateManager.js"
 import { DukeChord } from "./DukeChord.js"
 import { Header } from "./nav/Header.js"
@@ -20,21 +20,25 @@ const renderAllStateAsHTML = () => {
         fetchAllInstruments()
             .then(fetchAllInstrumentTypes)
             .then(fetchAllClasses)
+            .then(fetchUs)
             .then(() => {
-                header.innerHTML = Header()
                 container.innerHTML = DukeChord()
             })
     }
     else {
-        fetchUsers().then(
-            () => {
-                container.innerHTML = LoginForm()
-            }
-        )
+        const view = getURLParameter("view")
+        if (view === "register") {
+            container.innerHTML = RegisterForm()
+        }
+        else if (view === "login" || view === null){
+            fetchUsers().then(
+                () => {
+                    container.innerHTML = LoginForm()
+                }
+            )
+        }
     }
 }
-
-renderAllStateAsHTML()
 
 /*
     Listen for when any state is changed and render the application HTML
@@ -45,5 +49,11 @@ container.addEventListener("stateChanged", () => {
 
 
 window.addEventListener('popstate', function (event) {
-	container.dispatchEvent(new CustomEvent("stateChanged"))
+    container.dispatchEvent(new CustomEvent("stateChanged"))
 });
+
+
+// Initial render of header and view on page load
+header.innerHTML = Header()
+renderAllStateAsHTML()
+

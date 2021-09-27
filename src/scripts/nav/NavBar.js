@@ -9,6 +9,7 @@ container.addEventListener(
         if (event.target.className === "navLink") {
             if (event.target.id === "logout") {
                 logout()
+                changeView("login")
             }
             else {
                 changeView(event.target.id)

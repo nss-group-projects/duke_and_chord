@@ -1,7 +1,14 @@
-import { getUsers } from "../data/UserStateManager.js"
+import { getUsers, login } from "../data/UserStateManager.js"
 import { changeView } from "../data/ViewStateManager.js"
 
 const container = document.querySelector("#content")
+
+container.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "registerLink") {
+        clickEvent.preventDefault()
+        changeView("register")
+    }
+})
 
 container.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "loginButton") {
@@ -17,25 +24,11 @@ container.addEventListener("click", clickEvent => {
         }
 
         if (foundUser !== null) {
-            const encodedUser = btoa(JSON.stringify(foundUser))
-            localStorage.setItem("chord_user", encodedUser)
-            changeView("home")
-            container.dispatchEvent(new CustomEvent("stateChanged"))
+            login(foundUser)
+            changeView("", false)
         }
     }
 })
-
-container.addEventListener(
-    "click",
-    (event) => {
-        if (event.target.id === "registerLink") {
-            event.preventDefault()
-            history.pushState(null, "view", `?view=register`)
-            var popStateEvent = new PopStateEvent('popstate', { state: { view: "register" } })
-            window.dispatchEvent(popStateEvent)
-        }
-    }
-)
 
 
 export const LoginForm = () => {
@@ -46,7 +39,7 @@ export const LoginForm = () => {
         </div>
 
         <section class="register">
-            <a id="registerLink" href="/">Not a member yet?</a>
+            <a id="registerLink" href="">Not a member yet?</a>
         </section>
     `
 }

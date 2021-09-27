@@ -4,13 +4,19 @@ const container = document.querySelector("#content")
 
 const state = {
     currentUser: {},
-    users: []
+    users: [],
+    us: []
 }
 
 export const logout = () => {
     localStorage.removeItem("chord_user")
     state.currentUser = {}
-    container.dispatchEvent(new CustomEvent("stateChanged"))
+}
+
+export const login = (user) => {
+    const encodedUser = btoa(JSON.stringify(user))
+    localStorage.setItem("chord_user", encodedUser)
+    setCurrentUser(user)
 }
 
 export const setCurrentUser = (user) => {
@@ -28,7 +34,7 @@ export const fetchUsers = () => {
 }
 
 export const getUsers = () => {
-    return state.users.map(u => ({...u}))
+    return state.users.map(u => ({ ...u }))
 }
 
 export const isAuthenticated = () => {
@@ -50,4 +56,17 @@ export const isAuthenticated = () => {
 
     // No user in state or in local storage
     return false
+}
+
+export const fetchUs = () => {
+    const personFetches = []
+
+    return fetch(`https://randomuser.me/api/?results=10&inc=name,picture,email`)
+        .then(res => res.json())
+        .then(data => state.us = data.results)
+
+}
+
+export const getUs = () => {
+    return state.us
 }

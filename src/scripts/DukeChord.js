@@ -7,6 +7,7 @@ import { InstrumentDetail } from "./instruments/InstrumentDetail.js"
 import { InstrumentForm } from "./instruments/InstrumentForm.js"
 import { InstrumentList } from "./instruments/InstrumentList.js"
 import { NavBar } from "./nav/NavBar.js"
+import { EmployeeList } from "./employees/EmployeeList.js"
 
 export const DukeChord = () => {
     return `
@@ -37,8 +38,8 @@ const buildView = () => {
         case "class":
             return ClassDetails()
 
-        case "register":
-            return RegisterForm()
+        case "about":
+            return EmployeeList()
 
         default:
             return Home()
