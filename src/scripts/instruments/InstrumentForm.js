@@ -12,9 +12,12 @@ content.addEventListener("click", clickEvent => {
 
 
 const checkForStateChange = (evt) => {
+
     if (evt.target.classList.contains("newInstrument__input")) {
         const type = evt.target.type
         let value = null
+
+
 
         switch (type) {
             case "select-one":
@@ -37,6 +40,7 @@ const checkForStateChange = (evt) => {
 
         formState[evt.target.id] = value
         console.log(formState)
+
     }
 }
 
@@ -47,7 +51,6 @@ content.addEventListener("keyup", evt => {
 content.addEventListener("change", evt => {
     checkForStateChange(evt)
 })
-
 
 export const InstrumentForm = () => {
     const types = getInstrumentTypes()
@@ -90,7 +93,7 @@ export const InstrumentForm = () => {
                 <label class="prompt">Used:</label>
                 <div class="newInstrument__input">
                     <label class="switch">
-                        <input value="${formState.used}" id="used" type="checkbox" />
+                        <input value="${formState.used}" id="used" type="checkbox" class="newInstrument__input" />
                         <span class="slider"></span>
                     </label>
                 </div>

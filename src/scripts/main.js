@@ -30,12 +30,8 @@ const renderAllStateAsHTML = () => {
         if (view === "register") {
             container.innerHTML = RegisterForm()
         }
-        else if (view === "login" || view === null){
-            fetchUsers().then(
-                () => {
-                    container.innerHTML = LoginForm()
-                }
-            )
+        else if (view === "login" || view === null) {
+            container.innerHTML = LoginForm()
         }
     }
 }
@@ -47,13 +43,10 @@ container.addEventListener("stateChanged", () => {
     renderAllStateAsHTML()
 })
 
-
 window.addEventListener('popstate', function (event) {
     container.dispatchEvent(new CustomEvent("stateChanged"))
 });
 
-
 // Initial render of header and view on page load
 header.innerHTML = Header()
 renderAllStateAsHTML()
-

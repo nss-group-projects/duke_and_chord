@@ -1,8 +1,6 @@
 import { getClasses } from "../data/ClassStateManager.js"
 import { getURLParameter } from "../data/ViewStateManager.js"
 
-const container = document.querySelector("#content")
-
 export const ClassDetails = () => {
     const id = getURLParameter("classId")
     const clazz = getClasses().find(c => c.id === parseInt(id))

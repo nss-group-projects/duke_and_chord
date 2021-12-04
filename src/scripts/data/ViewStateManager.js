@@ -5,7 +5,6 @@ export const changeView = (view) => {
 
     var popStateEvent = new PopStateEvent('popstate', { state: { view } })
     window.dispatchEvent(popStateEvent)
-    container.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
 export const getURLParameter = (name = "home") => {

@@ -1,4 +1,4 @@
-import { getUsers, login } from "../data/UserStateManager.js"
+import { findUser, getCurrentUser, getUsers, login } from "../data/UserStateManager.js"
 import { changeView } from "../data/ViewStateManager.js"
 
 const container = document.querySelector("#content")
@@ -12,21 +12,18 @@ container.addEventListener("click", clickEvent => {
 
 container.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "loginButton") {
-        let foundUser = null
-        const userState = getUsers()
-
         const email = document.querySelector("input[name='email']").value
 
-        for (const user of userState) {
-            if (user.email === email) {
-                foundUser = user
-            }
-        }
-
-        if (foundUser !== null) {
-            login(foundUser)
-            changeView("", false)
-        }
+        findUser(email)
+            .then((data) => {
+                if (data.length > 0) {
+                    login(data[0])
+                    changeView("", false)
+                }
+                else {
+                    window.alert("Invalid account email")
+                }
+            })
     }
 })
 

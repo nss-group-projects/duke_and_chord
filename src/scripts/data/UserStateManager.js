@@ -33,6 +33,11 @@ export const fetchUsers = () => {
         .then(data => state.users = data)
 }
 
+export const findUser = (email) => {
+    return fetch(`${settings.apiURL}/api/users?email=${email}`)
+        .then(response => response.json())
+}
+
 export const getUsers = () => {
     return state.users.map(u => ({ ...u }))
 }
