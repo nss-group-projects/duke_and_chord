@@ -1,5 +1,4 @@
 import { login } from "../data/UserStateManager.js"
-import { changeView } from "../data/ViewStateManager.js"
 
 const container = document.querySelector("#content")
 const formState = {
@@ -9,7 +8,7 @@ const formState = {
 
 container.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "register") {
-        return fetch(`http://localhost:5002/api/users`, {
+        return fetch(`${settings.apiURL}/api/users`, {
             method: "POST",
             headers: {
                "Content-Type": "application/json"

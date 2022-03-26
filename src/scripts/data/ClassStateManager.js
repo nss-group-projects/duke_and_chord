@@ -29,7 +29,7 @@ export const shouldPlaySounds = () => {
 }
 
 export const fetchAllClasses = () => {
-    return fetch(`http://localhost:5002/api/classes?_expand=musician`)
+    return fetch(`${settings.apiURL}/api/classes?_expand=musician`)
         .then(response => response.json())
         .then(
             (classes) => {

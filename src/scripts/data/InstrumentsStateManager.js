@@ -1,3 +1,5 @@
+import { settings } from "./Settings"
+
 const state = {
     instruments: [],
     instrumentTypes: [],
@@ -43,7 +45,7 @@ export const shouldPlaySounds = () => {
 }
 
 export const saveInstrument = (instrument) => {
-    return fetch(`http://localhost:5002/api/instruments`, {
+    return fetch(`${settings.apiURL}/api/instruments`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -58,7 +60,7 @@ export const saveInstrument = (instrument) => {
 }
 
 export const fetchAllInstruments = () => {
-    return fetch(`http://localhost:5002/api/instruments?_expand=instrumentType&_expand=user`)
+    return fetch(`${settings.apiURL}/api/instruments?_expand=instrumentType&_expand=user`)
         .then(response => response.json())
         .then(
             (instrumentsArray) => {
@@ -68,7 +70,7 @@ export const fetchAllInstruments = () => {
 }
 
 export const fetchAllInstrumentTypes = () => {
-    return fetch(`http://localhost:5002/api/instrumentTypes`)
+    return fetch(`${settings.apiURL}/api/instrumentTypes`)
         .then(response => response.json())
         .then( typeArray  => state.instrumentTypes = typeArray )
 }

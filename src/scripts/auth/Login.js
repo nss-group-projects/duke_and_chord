@@ -1,4 +1,4 @@
-import { findUser, getCurrentUser, getUsers, login } from "../data/UserStateManager.js"
+import { findUser, login } from "../data/UserStateManager.js"
 import { changeView } from "../data/ViewStateManager.js"
 
 const container = document.querySelector("#content")
