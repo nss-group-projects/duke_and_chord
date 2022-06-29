@@ -1,12 +1,11 @@
 import { Home } from "./Home.js"
-import { RegisterForm } from "./auth/Register.js"
+import { NavBar } from "./nav/NavBar.js"
 import { ClassDetails } from "./classes/ClassDetails.js"
 import { ClassList } from "./classes/ClassList.js"
 import { getURLParameter } from "./data/ViewStateManager.js"
 import { InstrumentDetail } from "./instruments/InstrumentDetail.js"
 import { InstrumentForm } from "./instruments/InstrumentForm.js"
 import { InstrumentList } from "./instruments/InstrumentList.js"
-import { NavBar } from "./nav/NavBar.js"
 import { EmployeeList } from "./employees/EmployeeList.js"
 
 export const DukeChord = () => {
