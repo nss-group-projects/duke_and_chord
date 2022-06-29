@@ -1,3 +1,3 @@
 export const settings = {
-    apiURL:"${settings.apiURL}"
+    apiURL:`http://localhost:5002`
 }

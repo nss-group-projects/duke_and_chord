@@ -1,3 +1,5 @@
+import { settings } from "./Settings.js"
+
 const state = {
     classes: [],
     chosenClass: {}
