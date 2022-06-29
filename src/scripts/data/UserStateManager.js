@@ -64,8 +64,6 @@ export const isAuthenticated = () => {
 }
 
 export const fetchUs = () => {
-    const personFetches = []
-
     return fetch(`https://randomuser.me/api/?results=10&inc=name,picture,email`)
         .then(res => res.json())
         .then(data => state.us = data.results)

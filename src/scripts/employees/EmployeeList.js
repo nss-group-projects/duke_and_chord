@@ -10,8 +10,7 @@ export const EmployeeList = () => {
 
         <p class="mission">
             Ipsam voluptatum harum quia fugit voluptatem et. Sit quis quia reiciendis. Neque velit minima quia eius asperiores adipisci nam dolore. Repellat dolorem magni dolores quaerat corrupti voluptatibus. Voluptates possimus nam ipsa necessitatibus adipisci voluptatem. Maiores debitis alias et iure.
-            Omnis dolore accusantium odit sit sit et illum. Ex omnis id placeat. Distinctio libero sint aut aperiam et in id dolorum. Ex quidem veniam quod tempora molestiae.
-            Perspiciatis laborum illo quidem repellendus itaque qui et molestiae velit. Rerum non autem laborum. Aut unde non ad voluptatum et quia laudantium ad. Accusamus deserunt aut corporis et iste. Aliquid aut aspernatur ea officia cupiditate.
+            Omnis dolore accusantium odit sit sit et illum.
         </p>
 
         <h2 class="header--centered">Introductions</h2>
