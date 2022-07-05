@@ -1,3 +1,4 @@
 export const settings = {
-    apiURL:`http://localhost:5002`
+    apiURL:`https://duke.nss.team`
+    // apiURL:`http://localhost:5002`
 }
