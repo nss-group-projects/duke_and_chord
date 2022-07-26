@@ -80,7 +80,8 @@ export const getInstrumentTypes = () => {
 }
 
 export const getInstruments = () => {
-    return state.instruments.filter(
+    const copy = structuredClone(state.instruments)
+    return copy.filter(
         (instrument) => {
             if (state.filter !== "" && instrument.instrumentType.name.toLowerCase() === state.filter) {
                 return true
@@ -93,5 +94,4 @@ export const getInstruments = () => {
         }
     )
     .sort((current, next) => next.id - current.id)
-    .map(instrument => ({...instrument}))
 }

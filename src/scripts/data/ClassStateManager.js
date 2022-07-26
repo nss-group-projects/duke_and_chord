@@ -41,5 +41,5 @@ export const fetchAllClasses = () => {
 }
 
 export const getClasses = () => {
-    return state.classes.map(musicClass => ({...musicClass}))
+    return structuredClone(state.classes)
 }
